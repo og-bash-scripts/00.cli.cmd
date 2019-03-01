@@ -1,0 +1,38 @@
+https://server-ilo/
+https://server-ilo/
+
+tar -cf /backup_for_sp4_upgrade_etc.tar /etc
+tar -cf /backup_for_sp4_upgrade_opt_intellinx.tar /opt/intelllinx
+scp backup_for_sp4_upgrade_etc.tar root@server:/root/7-7-2018.intellinx.OG.backup
+scp backup_for_sp4_upgrade_opt_intellinx.tar root@server:/root/7-7-2018.intellinx.OG.backu
+ssh root@server
+
+
+du -sh /opt/intellinx
+
+du -sh /etc
+df -h /
+sftp/scp
+server.us.domain.com (10.127.232.71)
+\\us.domain.com\remote\ksa699\users\<your prefid>
+
+C263950
+svaksa69901msh
+scp file.txt username@to_host:/remote/directory/
+scp ogtest.txt root@server:/root/7-7-2018.intellinx.OG.backup
+scp foldername root@server:/root/7-7-2018.intellinx.OG.backup
+735119546
+
+
+###push files from source to destination
+
+scp file.txt username@to_host:/remote/directory/
+/opt/intellinx/ic/520/logs/InvestigationCenter.log
+server
+
+scp /opt/intellinx/ic/520/logs/InvestigationCenter.log oagalin@server:/home/oagalin
+
+###pull files from source to destination
+scp username@to_host:/remote/directory/file.txt .
+scp root@server:/opt/intellinx/ic/520/logs/InvestigationCenter.log .
+
