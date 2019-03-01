@@ -1,0 +1,50 @@
+cat -n filename.txt #cat with line number
+tac filename #view bottome of file at top
+
+head filename.txt #1st 10 lines of file
+head file*
+head -n 5 filename.txt #custom line stdout
+tail filename.txt
+tail -n 5 filename.txt
+
+| more #one page at a time, q to quit, 1+spacebar, 1z+spacebar permanent one line when spacebar is pressed
+| less #f forward, b back, 1+f, 1+b, 1w+f, 1w+b, q exit, / to search
+
+diff /dir1 /dir2 #compares difference of directory
+diff file1.txt file2.txt #c=change, d=delete, a=add, < words to change, > to match, 1,3c1,31 change lines 1-3 on file one to 1-3 on file two. 5,6d << deleted these lines in file1
+diff -c file1.txt file2.txt #!=change, -=delete
+diff -u
+diff -e file1.txt file2.txt > edits.txt #creates scripts for ed editor
+	ed -file1.txt < edites.txt #merge docs
+
+	uniq -c input.txt #find duplicate lines in file
+uniq input.txt output.txt #uniq deletes duplicates
+uniq -i liest.txt #i ignores case sensitive
+
+sort list.txt #sorts duplicates in file
+sort -r list.txt # sorts reverse in file
+sort list.txt -o output.txt #write output to file
+sort -uf #u print unque lines with no dups, f ignores case
+***
+sort -k 3.4 users.txt #sort to only print field, -k for keys, 3 field start on 4th characters
+
+cut -f 2 -d ' ' users.txt #-f field ,-d delimiter
+***
+dmesg #linux boot diag message
+
+history | cut -c 8- #history with no line number
+history|awk '{$1="";print substr($0,2)}'
+
+
+find /var/opt/intellinx/ca/queues/onlinebanking/ -maxdepth 3 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort D
+ 
+find /var/opt/intellinx/ca/queues/onlinebanking/capturer_olb_03_2 -maxdepth 1 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+
+find /var/opt/intellinx/ca/queues/onlinebanking/sensor_olb_02_2 -maxdepth 1 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+
+find /var/opt/intellinx/ca/queues/onlinebanking/capturer_olb_03_2 -maxdepth 1 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+find /var/opt/intellinx/ca/queues/onlinebanking/capturer_olb_03_2 -maxdepth 2 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+find /var/opt/intellinx/ca/queues/onlinebanking/ -maxdepth 3 -type f -printf '%TY-%Tm %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+find /var/opt/intellinx/ca/queues/onlinebanking/ -maxdepth 3 -type f -printf '%TY-%Tm-%TD %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+find /var/opt/intellinx/ca/queues/onlinebanking/ -maxdepth 3 -type f -printf '%TD %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
+find -h /var/opt/intellinx/ca/queues/onlinebanking/ -maxdepth 3 -type f -printf '%TD %s\n' | awk '{b[$1]+=$2} END{for (date in b) print date, b[date]}' | sort
